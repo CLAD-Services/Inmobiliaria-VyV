@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F4F5F7;
+    color: #0F1115;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  ::selection {
+    background-color: #E65F2B;
+    color: white;
+  }
+}
+
+@layer components {
+  .bg-grid-blueprint {
+    background-image:
+      linear-gradient(rgba(15, 17, 21, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 17, 21, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .structural-shadow {
+    box-shadow: 8px 8px 0 0 #0F1115, 0 0 0 2px #0F1115;
+  }
+  .btn-primary {
+    background-color: #E65F2B;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border: 2px solid #E65F2B;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #0F1115;
+    border-color: #0F1115;
+    box-shadow: 8px 8px 0 0 #0F1115, 0 0 0 2px #0F1115;
+  }
+  .btn-outline {
+    background-color: transparent;
+    color: #0F1115;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border: 2px solid #0F1115;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+  }
+  .btn-outline:hover {
+    background-color: #0F1115;
+    color: white;
+    box-shadow: 8px 8px 0 0 #0F1115, 0 0 0 2px #0F1115;
+  }
+  .project-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .project-card:hover .project-card-overlay {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .counter-value {
+    font-variant-numeric: tabular-nums;
+  }
+  .line-through-animated {
+    position: relative;
+  }
+  .line-through-animated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #E65F2B;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .line-through-animated:hover::after {
+    width: 100%;
+  }
+}
+
